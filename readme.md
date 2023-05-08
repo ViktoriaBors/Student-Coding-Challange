@@ -60,7 +60,7 @@ export type StudentRequest = {
 
 ## Part 2 -- Questionarre.
 
-1. The project above has a couple of design flaws in it. Can you point at least one out?
+1. If this project were to be used with 'real' users, it'd have a couple of design flaws in it, can you point out at least one?
    - [Answer]
 2. Suppose you are working with OAuth2 tokens, how long until they expire? Please provide an answer for both access and refresh tokens.
    - [Answer]

@@ -61,12 +61,13 @@ export type StudentRequestBody = {
 ## Part 2 -- Questionnaire
 
 1. If this project were to be used with 'real' users, it would have a couple of design flaws. Can you point out at least one?
-   - [Answer]
+   - [There should be data-validation on the backend]
+   - [Gonna be honest, I am not a designer - I am up for to get a figma file and make it real]
 
 
 2. Suppose you are working with OAuth2 tokens. How much time do you have from the point of issuance until they expire? Please provide an answer for both access and refresh tokens.
-   - [Answer]
+   - [Access token has a short expiration date - minutes, max an hour, because this is used for authentication. It reduces the risk for an unauthorized person to access to this token. Refresh token is alive much longer, because the user is authenticated now.]
 
 
 3. 57 68 61 74 20 64 6F 20 79 6F 75 20 74 68 69 6E 6B 2C 20 77 68 61 74 20 69 73 20 74 68 65 20 63 6F 6F 6C 65 73 74 20 6E 65 77 20 74 65 63 68 20 6F 75 74 20 74 68 65 72 65 3F ?
-   - [Answer]
+   - [Sorry, I cannot read ASCII characters just like this - I needed to ask my newest mentor - ChatGPT :D So I would say the coolest new tech out there is definitely AI-driven technologies. Vocaire is in the right direction, using new tech to make life easier to PT :D ]

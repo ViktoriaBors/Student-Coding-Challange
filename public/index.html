@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body class="bg-slate-200">
+    <h1 class="m-4 text-3xl text-center text-teal-600 font-bold">Welcome to Vocaire!</h1>
+    <p class="text-center m-2 text-lg">Physiotherapist are meant to do physical therapy. Not tedious admin work.</p>
+    <p class="text-center text-xl text-teal-600 font-bold m-2">Sign up below to try it out! </p>
+   
+    <div class="my-8" id="app">
+      <form action="" @submit.prevent class="max-w-72 bg-slate-100 rounded drop-shadow-lg m-2">
+        <div class="flex flex-col justify-center items-center md:grid md:grid-cols-2 md:justify-items-center md:mx-8">
+          <div class="p-4">
+            <p class="ml-1 pb-2 font-bold">Organization:</p>
+            <input
+            class="px-3 py-1.5 text-base font-normal text-gray-700 bg-white border border-solid border-teal-800 rounded transition ease-in-out m-0 focus:ring-teal-500 focus:border-teal-500"
+              type="text"
+              :value="organization"
+              @input="event => organization = event.target.value"
+              placeholder="Organization"
+              aria-label="organization"
+              required
+            ></input>
+          </div>
+          <div class="p-4">
+            <p class="ml-1 pb-2 font-bold">Contact Person:</p>
+            <input
+            class="px-3 py-1.5 text-base font-normal text-gray-700 bg-white border border-solid border-teal-800 rounded transition ease-in-out m-0 focus:ring-teal-500 focus:border-teal-500"
+              type="text"
+              :value="name"
+              @input="event => name = event.target.value"
+              placeholder="Name"
+              aria-label="name"
+              required
+            ></input>
+          </div>
+          <div class="p-4">
+            <p class="ml-1 pb-2 font-bold">Email Address:</p>
+            <input
+            class="px-3 py-1.5 text-base font-normal text-gray-700 bg-white border border-solid border-teal-800 rounded transition ease-in-out m-0 focus:ring-teal-500 focus:border-teal-500"
+              type="email"
+              :value="email"
+              @input="event => email = event.target.value"
+              placeholder="Email"
+              aria-label="email"
+              required
+            ></input>
+            <p 
+            v-if="emailError"
+            class="text-red-900 mt-2 text-base font-bold leading-tight"
+            >Correct email form: abc@cda.com</p>
+          </div>
+          <div class="p-4">
+            <p class="ml-1 pb-2 font-bold">Phone number:</p>
+            <input
+            class="px-3 py-1.5 text-base font-normal text-gray-700 bg-white border border-solid border-teal-800 rounded transition ease-in-out m-0 focus:ring-teal-500 focus:border-teal-500"
+              type="phone"
+              :value="phone"
+              @input="event => phone = event.target.value"
+              placeholder="Phone number"
+              aria-label="phone"
+              required
+            ></input>
+            <p 
+            v-if="phoneError"
+            class="text-red-900 mt-2 text-base font-bold leading-tight"
+            >Correct phone form:+45-01-234-567</p>
+          </div>
+        </div>
+        <div class="m-4 md:ml-2 text-center">
+          <button 
+          @click="submit"
+          class="inline-block mb-2 md:w-1/2 px-6 py-2 text-base font-bold leading-tight text-white uppercase transition duration-150 ease-in-out bg-teal-700 border-2 border-gray-400 rounded shadow-md btn hover:bg-teal-600 hover:shadow-lg active:bg-teal-700 active:shadow-lg focus:outline-none focus:ring-0"
+    
+          >Send</button>
+          <p 
+          v-if="result !== ''"
+          class="text-red-900 mb-2 text-base font-bold leading-tight"
+          >{{result}}</p>
+        </div>
+        </div>
+      </form>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

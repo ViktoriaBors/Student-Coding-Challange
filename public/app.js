@@ -10,7 +10,7 @@ const app = Vue.createApp({
     },
     methods: {
         submit(){
-            if(!this.emailError || !this.phoneError || !this.name || !this.organization ){
+            if(this.emailError || this.phoneError || !this.name || !this.organization ){
                 this.result = "Submit is not successful. Please check that you filled the form correct."
                 return
             } else {
@@ -40,12 +40,12 @@ const app = Vue.createApp({
     computed:{
         emailError(){
             if(this.email !== undefined){
-                return !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email);
-            } else return false
+                return !(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(this.email));
+            } else return false;
         },
         phoneError(){
             if(this.phone !== undefined){
-                return !/^45\d{6}$/.test(this.phone);
+                return !/^\+?45\d{8}$/.test(this.phone);
             } else return false
         }        
     }
